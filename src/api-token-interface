@@ -1,0 +1,44 @@
+import {ApiTokenAccessLevelType, ApiTokenApplicationType, ApiTokenAuthContextType, ApiTokenProfileType} from './api-token';
+
+
+export interface ApiTokenRoleInterface {
+    _id: string;
+    acl: ApiTokenAccessLevelType | number
+}
+
+
+export interface ApiTokenOptionsInterface {
+    clientContact: string;
+    audience: Array<string>;
+    applicationType: ApiTokenApplicationType | string;
+    clientId: string;
+    clientName: string;
+    authContext: ApiTokenAuthContextType | number;
+    issuer: string;
+    module: Array<string>;
+    profile: ApiTokenProfileType | number;
+    scope?: string;
+    role?: ApiTokenRoleInterface;
+    requestUri: string;
+}
+
+
+export interface ApiTokenPayloadInterface {
+    apt: ApiTokenApplicationType | string;
+    aud: Array<string>;
+    cct: string;
+    cid: string;
+    ctx: ApiTokenAuthContextType | number;
+    cna: string;
+    iat: number;
+    exp: number;
+    iss: string;
+    mod: Array<string>;
+    prf: ApiTokenProfileType | number;
+    kid: string;
+    role: ApiTokenRoleInterface;
+    scope: string;
+    sub: string;
+    uri: string;
+    uid: string;
+}
